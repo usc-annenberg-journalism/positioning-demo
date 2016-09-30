@@ -1,0 +1,46 @@
+#fixed-box {
+	width: 300px;
+	background: yellow;
+	padding: 10px;
+	text-align: center;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
+	/* additional css properties related to position:
+	top:
+	bottom:
+	left:
+	right:
+	*/
+}
+
+/* the big takeaway from position: fixed is that:
+1) it is positioned relative to the browser window (so if you shrink or grow your browser window, the element will be placed in relation to the window).
+2) an element with position: fixed will ALWAYS stay in view in the browser window, no matter how much you scroll.
+If you don't want your element to stay visible in the browser all the time, you don't use fixed positioning.
+Fixed positioning is helpful for things like header navigation that stays in the window all the time, or a footer that stays fixed to the bottom of the window all the time, or a tab on the side of the window that someone can click to get more information.
+*/
+
+#cat1 {
+	position: relative;
+}
+
+#cat2 {
+	position: relative;
+	top: -200px;
+	left: 100px;
+	margin-bottom: -200px; /* if you use negative positioning value, you have to set a margin of the same amount to get rid of the extra space */
+	z-index: 100; /* z-index is used for layering. the larger the number, the more likely this item will appear above everything */
+}
+
+#cat3 {
+	position: relative;
+	top: -200px;
+}
+
+/* the big takeaway from position: relative is this: 
+1) think of it as a parent-child relationship. The element immediately above the one you're positioning is the parent, the element you're positioning is the child.
+2) the child is being positioning relative to the parent. So, top: 100px will place the top edge of the element 100px away from the bottom of the parent element. If you use negative values, it will move the element in the opposite direction.
+3) If you use negative values to layer items, remember that the space the items would normally take up is still going to be there. You'll have to adjust by applying negative margins. (See #cat2).
+*/
